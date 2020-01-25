@@ -62,7 +62,7 @@ public class AccountServiceImpl implements AccountService {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, user);
             preparedStatement.setString(2, pass);
-            preparedStatement.executeUpdate(query);
+            preparedStatement.executeUpdate();
         }  catch (SQLException e) {
             throw new ExceptionInInitializerError(e);
         } finally {
@@ -91,4 +91,5 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> list() {
         return null;
     }
+
 }
